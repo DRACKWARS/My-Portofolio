@@ -3,7 +3,6 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-// Bypass folder storage ke /tmp
 $_ENV['APP_STORAGE'] = '/tmp/storage';
 $storagePath = $_ENV['APP_STORAGE'];
 
@@ -21,14 +20,17 @@ foreach ($directories as $dir) {
     }
 }
 
-// Tangkap SEMUA error dari Laravel dan cetak paksa
+// PAKSA LARAVEL MENGELUARKAN ERROR DALAM BENTUK JSON (Mengakali View yang rusak)
+$_SERVER['HTTP_ACCEPT'] = 'application/json';
+
 try {
     require __DIR__ . '/../public/index.php';
 } catch (\Throwable $e) {
-    echo "<h1 style='color:red;'>CRASH DARI DALAM LARAVEL:</h1>";
-    echo "<pre style='background:#f4f4f4; padding:15px; border:1px solid #ddd;'>";
-    echo "<strong>Pesan:</strong> " . $e->getMessage() . "\n\n";
-    echo "<strong>File:</strong> " . $e->getFile() . " baris " . $e->getLine() . "\n\n";
-    echo "<strong>Trace:</strong>\n" . $e->getTraceAsString();
-    echo "</pre>";
+    // Jika masih tembus, tangkap di sini
+    header('Content-Type: application/json');
+    echo json_encode([
+        'error' => $e->getMessage(),
+        'file' => $e->getFile(),
+        'line' => $e->getLine()
+    ]);
 }
