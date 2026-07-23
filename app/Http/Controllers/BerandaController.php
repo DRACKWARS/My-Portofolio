@@ -10,9 +10,8 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
-        $projects = Project::with('images')->get();
+        $projects = collect([]); // <- Ganti dengan ini
 
-        return view('beranda', compact('projects'));
+    return view('beranda', compact('projects'));
     }
 }
