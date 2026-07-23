@@ -18,19 +18,19 @@ class BerandaController extends Controller
                 'key_takeaways' => 'Responsive UI with Bootstrap|MVC Architecture Implementation|Laravel CRUD Development|User Authentication & Authorization',
                 'tech_stack' => 'Laravel,Bootstrap,MySQL,JavaScript',
                 'repo_link' => '',
-                'thumbnail' => 'beranda.png',
+                'thumbnail' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/beranda.png',
                 // TAMBAHKAN INI: Simulasi relasi database ProjectImage menggunakan Collection
                 'images' => collect([
-                    (object) ['image' => 'login.png'],
-                    (object) ['image' => 'create.png'],
-                    (object) ['image' => 'profile.png'],
-                    (object) ['image' => 'book view.png'],
-                    (object) ['image' => 'dasboard admin.png'],
-                    (object) ['image' => 'user.png'],
-                    (object) ['image' => 'data buku.png'],
-                    (object) ['image' => 'categori.png'],
-                    (object) ['image' => 'book rent.png'],
-                    (object) ['image' => 'rent log.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/login.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/Create.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/Profile.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/book%20view.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/dasboard%20admin.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/user.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/data%20buku.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/categori.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/book%20rent.png'],
+                    (object) ['image' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/rent%20log.png'],
                 ])
             ],
             (object) [
@@ -40,7 +40,7 @@ class BerandaController extends Controller
                 'key_takeaways' => 'Designed and developed a full-stack IoT monitoring web application using Laravel MVC Architecture|Integrated ESP8266 with multiple environmental sensors through HTTP API communication|Implemented real-time monitoring for temperature, humidity, NH3, CO, light intensity, and cattle behavior|Built interactive dashboards with historical sensor data visualization and charts|Implemented Temperature Humidity Index (THI) analysis to evaluate livestock environmental conditions|Developed RESTful APIs for seamless communication between IoT devices and the Laravel backend|Managed relational databases using MySQL and Eloquent ORM',
                 'tech_stack' => 'Laravel,PHP,Bootstrap,JavaScript,MySQL,ESP8266',
                 'repo_link' => '',
-                'thumbnail' => 'image.png',
+                'thumbnail' => 'https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/image.png',
                 // Pastikan properti 'images' tetap ada meskipun kosong agar tidak error
                 'images' => collect([]) 
             ]
