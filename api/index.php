@@ -1,3 +1,2 @@
 <?php
-echo "<h1>Vercel PHP Menyala!</h1>";
-exit;
+require __DIR__ . '/../public/index.php';
