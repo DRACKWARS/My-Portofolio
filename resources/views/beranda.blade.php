@@ -176,7 +176,7 @@
             <div class="col-md-4">
                 <div class="custom-card p-3">
                     <div class="bg-white rounded mb-3 overflow-hidden" style="height: 220px;">
-                        <img src="{{ asset('images/' . $project->thumbnail) }}"
+                        <img src="{{(https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/beranda.png) }}"
                             alt="{{ $project->name }}"
                             class="w-100 h-100"
                             style="object-fit: cover;">
@@ -227,7 +227,7 @@
                                             <div class="bg-white rounded d-flex justify-content-center align-items-center"
                                                 style="height:250px;">
 
-                                                <img src="{{ asset('images/'.$image->image) }}"
+                                                <img src="{{ $image->image }}"
                                                     class="img-fluid"
                                                     style="max-height:230px; max-width:100%; object-fit:contain;">
 
