@@ -3,10 +3,16 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+// PAKSA LARAVEL MASUK KE MODE DEBUG AGAR ERROR ASLINYA TAMPIL
+$_ENV['APP_DEBUG'] = 'true';
+$_SERVER['APP_DEBUG'] = 'true';
+$_ENV['APP_ENV'] = 'local';
+$_SERVER['APP_ENV'] = 'local';
+
 // 1. Definisikan folder sementara di Vercel
 $tmpDir = '/tmp/laravel';
 
-// 2. Arahkan Storage dan Cache ke /tmp (Tanpa putenv yang rawan diblokir)
+// 2. Arahkan Storage dan Cache ke /tmp (Tanpa putenv)
 $caches = [
     'APP_SERVICES_CACHE' => $tmpDir . '/bootstrap/cache/services.php',
     'APP_PACKAGES_CACHE' => $tmpDir . '/bootstrap/cache/packages.php',
@@ -38,16 +44,5 @@ foreach ($directories as $dir) {
     }
 }
 
-// 4. Tangkap error dalam format JSON
-$_SERVER['HTTP_ACCEPT'] = 'application/json';
-
-try {
-    require __DIR__ . '/../public/index.php';
-} catch (\Throwable $e) {
-    header('Content-Type: application/json');
-    echo json_encode([
-        'error' => $e->getMessage(),
-        'file'  => $e->getFile(),
-        'line'  => $e->getLine()
-    ]);
-}
+// 4. Panggil Laravel secara normal (Hapus pemaksaan JSON agar layar merah Ignition bisa muncul)
+require __DIR__ . '/../public/index.php';
