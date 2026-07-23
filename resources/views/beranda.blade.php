@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div class="col-lg-6 text-center">
-                <img src="/profile.png" alt="Profile" class="img-fluid hero-img" style="max-width: 550px;">
+                <img src="https://0ih3lxtivqmpf53e.public.blob.vercel-storage.com/images/Fprofile.png" alt="Profile" class="img-fluid hero-img" style="max-width: 550px;">
             </div>
         </div>
     </section>
@@ -171,7 +171,7 @@
         <h2 class="fw-bold mb-5">Latest Project</h2>
         <div class="row g-4 text-start">
 
-            @foreach($projects as $project)
+        @foreach($projects as $project)
 
             <div class="col-md-4">
                 <div class="custom-card p-3">
@@ -191,7 +191,6 @@
                 </div>
             </div>
 
-            @endforeach
             <div class="modal fade"
                 id="projectModal{{ $project->id }}"
                 tabindex="-1">
@@ -379,7 +378,7 @@
 
             </div>
             
-
+        @endforeach
         </div>
 
         <!-- Call to Action -->
