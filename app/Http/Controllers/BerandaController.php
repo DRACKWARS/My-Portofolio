@@ -27,7 +27,7 @@ class BerandaController extends Controller
                 'repo_link'=>'',
                 'thumbnail'=>'image.png'
             ]
-        ]
+        ];
             
 
     return view('beranda', compact('projects'));
